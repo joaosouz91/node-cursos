@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Cadastro de Cursos - Listagem de Cursos</title>
+</head>
+<body>
+    <header>
+        <p>Bem-vindo,
+            <%= usuario.nome %>
+        </p>
+        <h1>Lista de Cursos</h1>
+        <h4>Selecione uma opção na lista para executá-la</h4>
+    </header>
+    <section>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descrição</th>
+                    <th>Carga Horária</th>
+                    <th>Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% cursos.forEach(function(curso, index) { %>
+                    <tr>
+                        <td><%= curso.id %></td>
+                        <td><%= curso.descricao %></td>
+                        <td><%= curso.cargaHoraria %></td>
+                        <td><%= curso.categoria %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <p>
+            <a href="/menu">Página inicial</a>
+        </p>
+    </section>
+    <footer>
+        <small>Sistema de Cadastro de Cursos</small>
+    </footer>
+</body>
+</html>
